@@ -9,7 +9,7 @@ def main():
 	GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW) # Set pin 8 as out, initially LOW
 	GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Set pin 10 as in, with pulldown resistor
 
-	GPIO.add_event_detect(10, GPIO.FALLING, callback=pushbutton_callback) # Interrupt at button push
+	GPIO.add_event_detect(10, GPIO.FALLING, callback=pushbutton_callback, bouncetime=200) # Interrupt at button push, debounce 200ms
 
 	while True: # Run function indefinitely
 		continue
