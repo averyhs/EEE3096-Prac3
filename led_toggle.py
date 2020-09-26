@@ -11,7 +11,7 @@ def main():
 
 	GPIO.add_event_detect(10, GPIO.FALLING, callback=pushbutton_callback) # Interrupt at button push
 
-	while True:
+	while True: # Run function indefinitely
 		continue
 
 def pushbutton_callback(channel):
@@ -20,8 +20,8 @@ def pushbutton_callback(channel):
 if __name__ == '__main__':
 	try:
 		main()
-	except KeyboardInterrupt:
+	except KeyboardInterrupt: # Exception handling for keyboard interrupt (exit from terminal)
 		print("starting cleanup")
-		GPIO.cleanup()
+		GPIO.cleanup() # Cleanup GPIO resources
 		print("cleanup complete")
-		sys.exit(0)
+		sys.exit(0) # Exit program
