@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO # Import pi GPIO library
+import sys
 from time import sleep
 
 def main():
@@ -10,10 +11,17 @@ def main():
 
 	GPIO.add_event_detect(10, GPIO.FALLING, callback=pushbutton_callback) # Interrupt at button push
 
-	GPIO.cleanup()
+	while True:
+		continue
 
 def pushbutton_callback(channel):
 	GPIO.output(8, not GPIO.input(8))
 
 if __name__ == '__main__':
-	main()
+	try:
+		main()
+	except KeyboardInterrupt:
+		print("starting cleanup")
+		GPIO.cleanup()
+		print("cleanup complete")
+		sys.exit(0)
