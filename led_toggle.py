@@ -6,12 +6,8 @@ def main():
 	GPIO.setwarnings(False) # Ignore warnings
 
 	GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW) # Set pin 8 as out, initially LOW
+	GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_UP) # Set pin 10 as in, with pullup resistor
 
-	while True:
-		GPIO.output(8, GPIO.HIGH) # LED ON
-		sleep(0.5) # Sleep for 0.5 seconds
-		GPIO.output(8, GPIO.LOW) # LED OFF
-		sleep(0.5) # Sleep for 0.5 seconds
 
 if __name__ == '__main__':
 	main()
