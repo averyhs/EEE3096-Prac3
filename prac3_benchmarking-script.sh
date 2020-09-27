@@ -84,8 +84,8 @@ for t in {2,4,8,16,32} ; do
 	# Run a few times to get average time
 	for i in {1..10} ; do
 	        echo "-- Run "$i" of 10"
-	        make run_threaded >>$OUTDIR/thread_2_c.txt
-	        echo >>$OUTDIR/thread_2_c.txt # Newline
+	        make run_threaded >>$OUTDIR/thread_$t.txt
+	        echo >>$OUTDIR/thread_$t.txt # Newline
 	done
 done
 
