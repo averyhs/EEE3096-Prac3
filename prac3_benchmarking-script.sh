@@ -47,7 +47,18 @@ done
 
 # Run C code with no threading or optimization
 # ============================================
+echo "Testing with no threading or optimization..."
 cd $TARGETDIR/C
+
+echo "Compiling..."
+make
+
+# Run a few times to get average time
+for i in {1..10} ; do
+	echo "-- Run "$i" of 10"
+	make run >>$OUTDIR/original_c.txt
+	echo >>$OUTDIR/original_c.txt # Newline
+done
 
 # Run C code using multithreading
 # ===============================
