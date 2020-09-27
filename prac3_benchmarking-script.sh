@@ -7,6 +7,11 @@ TARGETDIR="$HOME/Documents/EEE3096S-Pracs-2020/Prac3"
 BASEDIR="$HOME/Documents/HRRHAN002_TSHWAN006"
 OUTDIR="$BASEDIR/raw_out"
 
+# Clean output directory
+# ======================
+echo "Cleaning output directory..."
+rm -f $OUTDIR/*
+
 # Warm up cache
 # =============
 echo "Warming up cache..."
@@ -30,6 +35,30 @@ done
 
 # Run python code to establish a golden measure
 # =============================================
+echo "Establishing a golden measure..."
+cd $TARGETDIR/Python
+
+# Run a few times to get average time
+for i in {1..10} ; do
+	echo "-- Run "$i" of 10"
+	./PythonHeterodyning.py >>$OUTDIR/gold_py.txt
+	echo >>$OUTDIR/gold_py.txt # Newline
+done
+
+# Run C code with no threading or optimization
+# ============================================
+cd $TARGETDIR/C
+
+# Run C code using multithreading
+# ===============================
+
+# 2 threads
+# prompt to edit code for 2 threads
+# recompile threaded
+# run and direct output to file
+
+# 4 threads
+# ...
 
 # End
 # ===
