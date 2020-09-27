@@ -35,6 +35,7 @@ done
 
 # Run python code to establish a golden measure
 # =============================================
+echo
 echo "Establishing a golden measure..."
 cd $TARGETDIR/Python
 
@@ -47,6 +48,7 @@ done
 
 # Run C code with no threading or optimization
 # ============================================
+echo
 echo "Testing with no threading or optimization..."
 cd $TARGETDIR/C
 
@@ -62,14 +64,31 @@ done
 
 # Run C code using multithreading
 # ===============================
+echo
+echo "Testing with multithreading..."
+cd $TARGETDIR/C
 
 # 2 threads
-# prompt to edit code for 2 threads
-# recompile threaded
-# run and direct output to file
+# ---------
+echo
+echo "Using 2 threads..."
+
+# Replace default header with header that has required thread count
+rm $TARGETDIR/C/src/CHeterodyning_threaded.h
+cp $TARGETDIR/C/src/CHeterodyning_threaded_2.h $TARGETDIR/C/src/CHeterodyning_threaded.h
+
+# Compile
+echo "Compiling..."
+make threaded
+
+# Run a few times to get average time
+for i in {1..10} ; do
+        echo "-- Run "$i" of 10"
+        make run_threaded >>$OUTDIR/thread_2_c.txt
+        echo >>$OUTDIR/thread_2_c.txt # Newline
+done
 
 # 4 threads
-# ...
 
 # End
 # ===
