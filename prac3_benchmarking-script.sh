@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "Script started"
+echo
 
 # Directories
 # ===========
@@ -68,28 +69,27 @@ echo
 echo "Testing with multithreading..."
 cd $TARGETDIR/C
 
-# 2 threads
-# ---------
-echo
-echo "Using 2 threads..."
+for t in {2,4,8,16,32} ; do
+	echo
+	echo "Using "$t" threads..."
 
-# Replace default header with header that has required thread count
-rm $TARGETDIR/C/src/CHeterodyning_threaded.h
-cp $TARGETDIR/C/src/CHeterodyning_threaded_2.h $TARGETDIR/C/src/CHeterodyning_threaded.h
+	# Replace default header with header that has required thread count
+	rm $TARGETDIR/C/src/CHeterodyning_threaded.h
+	cp $TARGETDIR/C/src/CHeterodyning_threaded_$t.h $TARGETDIR/C/src/CHeterodyning_threaded.h
 
-# Compile
-echo "Compiling..."
-make threaded
+	# Compile
+	echo "Compiling..."
+	make threaded
 
-# Run a few times to get average time
-for i in {1..10} ; do
-        echo "-- Run "$i" of 10"
-        make run_threaded >>$OUTDIR/thread_2_c.txt
-        echo >>$OUTDIR/thread_2_c.txt # Newline
+	# Run a few times to get average time
+	for i in {1..10} ; do
+	        echo "-- Run "$i" of 10"
+	        make run_threaded >>$OUTDIR/thread_2_c.txt
+	        echo >>$OUTDIR/thread_2_c.txt # Newline
+	done
 done
-
-# 4 threads
 
 # End
 # ===
+echo
 echo "Script ended"

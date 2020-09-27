@@ -3,7 +3,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.412953 ms
+Time: 7.352833 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -11,7 +11,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.713951 ms
+Time: 7.534829 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -19,7 +19,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.248954 ms
+Time: 7.209836 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -27,7 +27,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.486953 ms
+Time: 7.351833 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -35,7 +35,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.735951 ms
+Time: 7.591828 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -43,7 +43,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.296954 ms
+Time: 7.271835 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -51,7 +51,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.512952 ms
+Time: 7.314834 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -59,7 +59,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.440953 ms
+Time: 7.649826 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -67,7 +67,7 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 7.637952 ms
+Time: 7.499830 ms
 End Unthreaded Test
 
 bin/CHeterodyning
@@ -75,6 +75,6 @@ Running Unthreaded Test
 Precision sizeof 4
 Total amount of samples: 100000
 Clock resolution: 1 ns
-Time: 8.002949 ms
+Time: 7.301834 ms
 End Unthreaded Test
 
