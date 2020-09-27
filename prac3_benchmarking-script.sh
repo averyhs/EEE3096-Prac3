@@ -9,22 +9,22 @@ OUTDIR="$BASEDIR/raw_out"
 
 # Warm up cache
 # =============
-echo "Warming up cache"
+echo "Warming up cache..."
 
 # compile C files
-echo "Compiling C files"
+echo "Compiling C files..."
 cd $TARGETDIR/C
-make
-make threaded
+make >/dev/null
+make threaded >/dev/null
 
 # Run python and C heterodyning 5 times
-echo "Run 5 times to warm up"
+echo "Run 5 times to warm up..."
 for i in {1..5} ; do
 	cd $TARGETDIR/Python
-	./PythonHeterodyning.py
+	./PythonHeterodyning.py >/dev/null
 	cd $TARGETDIR/C
-	make run
-	make run_threaded
+	make run >/dev/null
+	make run_threaded >/dev/null
 done
 
 
